@@ -1,6 +1,3 @@
-//Objetos - Clases
-//cuando a la variable la seguimos de llave creamos un objeto {}
-
 class Productos{
     constructor(nombre, categoria, stock, cantidadComprada){
         this.nombre = nombre;
@@ -8,12 +5,12 @@ class Productos{
         this.stock = stock;
         this.cantidad = cantidadComprada;
     }
-//El método se crea igual que una función, pero sin la palabra function y va dentro de la clase, pero fuera del constructor
+
 controlStock(){
 
     if(this.cantidad > this.stock){
 
-       alert("No tenemos suficiente stock de este producto") 
+       alert("Lo sentimos, no hay stock") 
     }
     else if(this.cantidad < this.stock && this.cantidad > 0) {
         this.stock = this.stock - this.cantidad
@@ -21,14 +18,14 @@ controlStock(){
 
     }
     else{
-        alert("Usted ingresó una cantidad negativa , eso es incorrecto")
+        alert("Por favor verifique la cantidad ingresada")
     }
 }
 
 
 }
-//Genenrar un objeto con datos que yo le pase, trabajar con ese objeto mediante métodos. 
+
 let compraUsuario = Number(prompt("Ingrese la cantidad a comprar"));
-const objeto1 = new Productos ("fideos", "pastas", 50, compraUsuario);
+const objeto1 = new Productos ("indumentaria", "zapatillas", 100, compraUsuario);
 
 objeto1.controlStock()
